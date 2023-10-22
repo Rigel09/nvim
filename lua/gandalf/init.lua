@@ -17,14 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 
 opts = {
 install = { colorscheme = { "tokyonight" } },
-	defaults = { lazy = true },
 	ui = {
 		border = "rounded",
 	},
-	checker = { enabled = true },
-	debug = false,
 }
 
 require('lazy').setup("gandalf.plugins", opts)
-
-vim.cmd[[colorscheme tokyonight]]
