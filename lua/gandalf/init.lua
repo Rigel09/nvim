@@ -23,3 +23,5 @@ install = { colorscheme = { "tokyonight" } },
 }
 
 require('lazy').setup("gandalf.plugins", opts)
+
+
