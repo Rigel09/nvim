@@ -50,8 +50,8 @@ km({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 km("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- Quit All
-km("n", "<leader>qq", "<cmd>qa<cr>", {desc = "Quite all"})
+km("n", "<leader>qq", "<cmd>qa<cr>", {desc = "Quite all", noremap = true })
 
 -- Go into EX mode easily
-km("n", "<leader>pv", vim.cmd.Ex)
+km("n", "<leader>pv", vim.cmd.Ex, { noremap = true })
 

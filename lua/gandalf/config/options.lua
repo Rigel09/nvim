@@ -1,4 +1,4 @@
---- set <Space> as the leader. This has to be done first.
+--set <Space> as the leader. This has to be done first.
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -44,7 +44,10 @@ o.splitright = true -- Put new windows right of current
 o.tabstop = 2 -- Number of spaces tabs count for
 o.termguicolors = true -- True color support
 
-o.timeoutlen = 300 -- Time in ms to wait for mapped key sequence
+o.timeout = true
+o.timeoutlen = 1000 -- Time in ms to wait for mapped key sequence
+o.ttimeoutlen = 3000
+o.ttimeout = true
 o.undofile = true -- Save undo history to a file
 o.undolevels = 3000 --max number of undos
 o.updatetime = 200 --num ms of inactivity before swap file is written to disk

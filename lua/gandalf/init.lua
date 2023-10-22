@@ -1,5 +1,5 @@
-require("gandalf.config.keymaps")
 require("gandalf.config.options")
+require("gandalf.config.keymaps")
 
 --- bootstrap lazy as the package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
