@@ -2,8 +2,7 @@ local M =
 { 
   "folke/neoconf.nvim",
   cmd = "Neoconf",
-  config = false,
-  dependencies = { "nvim-lspconfig" },
+  config = true,
 }
 
 return M
