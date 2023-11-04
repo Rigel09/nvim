@@ -1,6 +1,7 @@
 local M = {
   'echasnovski/mini.comment',
   event = 'VeryLazy',
+  config = true,
   opts = {
     options = {
       custom_commentstring = function()
