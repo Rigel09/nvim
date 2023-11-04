@@ -1,7 +1,6 @@
-local M =
-{ 
-  "folke/neoconf.nvim",
-  cmd = "Neoconf",
+local M = {
+  'folke/neoconf.nvim',
+  cmd = 'Neoconf',
   config = true,
 }
 
