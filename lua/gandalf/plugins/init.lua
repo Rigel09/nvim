@@ -7,6 +7,7 @@ local M = {
   { import = 'gandalf.plugins.linting' },
   { import = 'gandalf.plugins.formatting' },
   { import = 'gandalf.plugins.coding' },
+  { import = 'gandalf.plugins.git' },
 }
 
 return M
