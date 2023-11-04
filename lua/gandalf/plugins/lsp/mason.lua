@@ -43,6 +43,7 @@ local M = {
         'black', -- python formatter
         'pylint', -- python linter
         'shellcheck', -- bash linter / formatter
+        'mypy', --python
       },
     }
   end,

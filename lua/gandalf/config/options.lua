@@ -45,7 +45,7 @@ o.tabstop = 2 -- Number of spaces tabs count for
 o.termguicolors = true -- True color support
 
 o.timeout = true
-o.timeoutlen = 500 -- Time in ms to wait for mapped key sequence
+o.timeoutlen = 300 -- Time in ms to wait for mapped key sequence
 o.ttimeoutlen = 300
 o.ttimeout = true
 o.undofile = true -- Save undo history to a file
