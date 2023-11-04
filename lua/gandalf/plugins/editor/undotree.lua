@@ -1,7 +1,6 @@
-local M = 
-{
+local M = {
   'mbbill/undotree',
-  keys = { { "<leader>uu", vim.cmd.UndotreeToggle } },
+  keys = { { '<leader>uu', vim.cmd.UndotreeToggle } },
 }
 
 return M

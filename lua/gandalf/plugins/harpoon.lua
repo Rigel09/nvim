@@ -1,6 +1,4 @@
-local M = 
-{
-
+local M = {
   'ThePrimeagen/harpoon',
   enabled = true,
 }

@@ -1,6 +1,5 @@
-local M =
-{
-  "williamboman/mason-lspconfig.nvim",
+local M = {
+  'williamboman/mason-lspconfig.nvim',
 }
 
 return M

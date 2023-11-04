@@ -1,4 +1,3 @@
-print('vim.laststatus: ' .. tostring(vim.laststatus))
 local M = {
   'nvim-lualine/lualine.nvim',
   lazy = false,
