@@ -111,6 +111,14 @@ local M = {
             },
           },
         },
+        pylsp = {
+          pylsp_mypy = {
+            enabled = true,
+            overrides = { '--python-executable', '/home/jnewton/.pyenv/versions/3.11.3/envs/compaero/bin', true },
+            report_progress = true,
+            live_mode = false,
+          },
+        },
       },
     }
   end,

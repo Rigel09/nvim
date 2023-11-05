@@ -4,6 +4,7 @@ local M = {
   dependencies = {
     'hrsh7th/cmp-buffer', -- source for text in buffer
     'hrsh7th/cmp-path', -- source for file system paths
+    'hrsh7th/cmp-nvim-lsp-signature-help', -- source for file system paths
     'L3MON4D3/LuaSnip', -- snippet engine
     'saadparwaiz1/cmp_luasnip', -- for autocompletion
     'rafamadriz/friendly-snippets', -- useful snippets
@@ -33,7 +34,7 @@ local M = {
         ['<C-j>'] = cmp.mapping.select_next_item(), -- next suggestion
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(), -- show completion suggestions
+        ['<C-S>'] = cmp.mapping.complete(), -- show completion suggestions
         ['<C-e>'] = cmp.mapping.abort(), -- close completion window
         ['<CR>'] = cmp.mapping.confirm { select = false },
       },
@@ -43,6 +44,7 @@ local M = {
         { name = 'luasnip' }, -- snippets
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
+        { name = 'nvim_lsp_signature_help' },
       },
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {

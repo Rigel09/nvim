@@ -1,5 +1,5 @@
-require("gandalf.config.options")
-require("gandalf.config.keymaps")
+require 'gandalf.config.options'
+require 'gandalf.config.keymaps'
 
 --- bootstrap lazy as the package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -15,13 +15,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-opts = {
-install = { colorscheme = { "tokyonight" } },
-	ui = {
-		border = "rounded",
-	},
-}
+opts = {}
 
-require('lazy').setup("gandalf.plugins", opts)
-
-
+require('lazy').setup('gandalf.plugins', opts)
