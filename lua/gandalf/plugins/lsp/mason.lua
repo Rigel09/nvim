@@ -28,8 +28,8 @@ local M = {
       -- list of servers for mason to install
       ensure_installed = {
         'lua_ls', --lua
-        -- 'pyright', --python
-        'pylsp', --python
+        'pyright', --python
+        -- 'pylsp', --python
         -- 'jedi_language_server', --python
         'bashls', --bash
       },

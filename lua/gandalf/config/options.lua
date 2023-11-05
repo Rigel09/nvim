@@ -43,6 +43,7 @@ o.splitkeep = 'screen'
 o.splitright = true -- Put new windows right of current
 o.tabstop = 2 -- Number of spaces tabs count for
 o.termguicolors = true -- True color support
+o.colorcolumn = '100' --Where to put deadcolumn
 
 o.timeout = true
 o.timeoutlen = 300 -- Time in ms to wait for mapped key sequence

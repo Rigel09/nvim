@@ -2,6 +2,7 @@ local M = {
   'navarasu/onedark.nvim',
   priority = 1000,
   lazy = false,
+  enabled = false,
   config = function()
     -- Only call setup if we change the defaults
     require('onedark').setup {
