@@ -30,7 +30,7 @@ local M = {
     { '<leader>sm', '<cmd>Telescope marks<cr>', desc = 'Jump to Mark' },
     { '<leader>so', '<cmd>Telescope vim_options<cr>', desc = 'Options' },
     { '<leader>sR', '<cmd>Telescope resume<cr>', desc = 'Resume' },
+    { '<leader>sw', '<cmd>Telescope grep_string<cr>', desc = 'Find word' },
   },
 }
-
 return M
