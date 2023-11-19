@@ -13,9 +13,9 @@ local M = {
     { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent' },
 
     -- git
-    { '<leader>gc', '<cmd>Telescope git_commits<CR>', desc = 'commits' },
-    { '<leader>gs', '<cmd>Telescope git_status<CR>', desc = 'status' },
-    { '<leader>gb', '<cmd>Telescope git_branches<CR>', desc = 'status' },
+    { '<leader>gc', '<cmd>Telescope git_commits<CR>', desc = 'Shows git commits' },
+    { '<leader>gs', '<cmd>Telescope git_status<CR>', desc = 'Shows git status' },
+    { '<leader>gb', '<cmd>Telescope git_branches<CR>', desc = 'Shows available git branches' },
 
     -- search
     { '<leader>s"', '<cmd>Telescope registers<cr>', desc = 'Registers' },
