@@ -93,6 +93,22 @@ local M = {
       capabilities = capabilities,
       on_attach = on_attach,
     }
+    -- configure rust server
+    lspconfig['rust_analyzer'].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { 'rust' },
+      root_dir = require('lspconfig.util').root_pattern 'Cargo.toml',
+      settings = {
+        ['rust_analyzer'] = {
+          checkOnSave = {
+            enable = true,
+            command = 'clippy',
+          },
+          cargo = { allFeatures = true },
+        },
+      },
+    }
 
     -- configure lua server (with special settings)
     lspconfig['lua_ls'].setup {

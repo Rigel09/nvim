@@ -27,11 +27,13 @@ local M = {
     mason_lspconfig.setup {
       -- list of servers for mason to install
       ensure_installed = {
-        'lua_ls', --lua
-        'pyright', --python
-        -- 'pylsp', --python
-        -- 'jedi_language_server', --python
         'bashls', --bash
+        -- 'codelldb', --rust
+        -- 'jedi_language_server', --python
+        'lua_ls', --lua
+        -- 'pylsp', --python
+        'pyright', --python
+        'rust_analyzer', --rust
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
