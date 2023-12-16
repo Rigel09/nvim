@@ -8,16 +8,15 @@ local M = {
     'folke/neodev.nvim',
   },
   config = function()
-    --   local function has(plugin)
-    --     return require("lazy.core.config").spec.plugins[plugin] ~= nil
-    --   end
-    --
-    --   if has("neoconf.nvim") then
-    --       local plugin = require("lazy.core.config").spec.plugins["neoconf.nvim"]
-    --       require("neoconf").setup(require("lazy.core.plugin").values(plugin, "opts", false))
-    --   end
+    local function has(plugin)
+      return require('lazy.core.config').spec.plugins[plugin] ~= nil
+    end
 
-    -- require("neoconf").setup({})
+    if has 'neoconf.nvim' then
+      local plugin = require('lazy.core.config').spec.plugins['neoconf.nvim']
+      require('neoconf').setup(require('lazy.core.plugin').values(plugin, 'opts', false))
+    end
+    require('neoconf').setup {}
 
     require('neodev').setup()
 
@@ -99,6 +98,14 @@ local M = {
     lspconfig['pylsp'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
+    }
+    lspconfig['clangd'].setup {
+      capabilities = capabilities,
+      on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        require('clangd_extensions.inlay_hints').setup_autocmd()
+        require('clangd_extensions.inlay_hints').set_inlay_hints()
+      end,
     }
     lspconfig['bashls'].setup {
       capabilities = capabilities,
