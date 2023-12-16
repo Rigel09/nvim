@@ -47,5 +47,8 @@ km('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 -- Quit All
 km('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quite all', noremap = true })
 
+-- Misc
+km('n', '<leader>cc', '<cmd>noh<cr>', { desc = 'Runs noh', noremap = true })
+
 -- Go into EX mode easily
 km('n', '<leader>pv', vim.cmd.Ex, { noremap = true })

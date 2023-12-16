@@ -31,8 +31,8 @@ local M = {
         -- 'codelldb', --rust
         -- 'jedi_language_server', --python
         'lua_ls', --lua
-        -- 'pylsp', --python
-        'pyright', --python
+        'pylsp', --python
+        -- 'pyright', --python
         'rust_analyzer', --rust
       },
       -- auto-install configured servers (with lspconfig)

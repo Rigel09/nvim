@@ -5,6 +5,7 @@ local M = {
     'hrsh7th/cmp-nvim-lsp',
     -- { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
     { 'antosha417/nvim-lsp-file-operations', config = true },
+    'folke/neodev.nvim',
   },
   config = function()
     --   local function has(plugin)
@@ -18,6 +19,8 @@ local M = {
 
     -- require("neoconf").setup({})
 
+    require('neodev').setup()
+
     -- import lspconfig plugin
     local lspconfig = require 'lspconfig'
 
@@ -29,6 +32,7 @@ local M = {
     local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
+      -- client.resolved_capabilities.hover = true
 
       -- set keybinds
       opts.desc = 'Show LSP references'
@@ -67,6 +71,9 @@ local M = {
       opts.desc = 'Show documentation for what is under cursor'
       keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
+      opts.desc = 'Show signature for what is under cursor'
+      keymap.set('n', 'S', vim.lsp.buf.signature_help, opts) -- show signature for what is under cursor
+
       opts.desc = 'Restart LSP'
       keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts) -- mapping to restart lsp if necessary
     end
@@ -89,9 +96,14 @@ local M = {
       on_attach = on_attach,
     }
     -- configure python server
-    lspconfig['pyright'].setup {
+    lspconfig['pylsp'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
+    }
+    lspconfig['bashls'].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { 'tmux' },
     }
     -- configure rust server
     lspconfig['rust_analyzer'].setup {
