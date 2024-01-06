@@ -64,6 +64,8 @@ local M = {
       'markdown',
       'markdown_inline',
       'python',
+      'qmljs',
+      'qmldir',
       'query',
       'regex',
       'ron',
