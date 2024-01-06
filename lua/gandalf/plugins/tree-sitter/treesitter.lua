@@ -63,6 +63,7 @@ local M = {
       'luap',
       'markdown',
       'markdown_inline',
+      'matlab',
       'python',
       'qmljs',
       'qmldir',

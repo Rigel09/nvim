@@ -112,6 +112,10 @@ local M = {
       on_attach = on_attach,
       filetypes = { 'tmux' },
     }
+    lspconfig['matlab_ls'].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
     -- configure rust server
     lspconfig['rust_analyzer'].setup {
       capabilities = capabilities,
