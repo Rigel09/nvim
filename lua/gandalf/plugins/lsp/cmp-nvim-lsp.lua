@@ -21,6 +21,17 @@ local M = {
     require('luasnip.loaders.from_vscode').lazy_load()
 
     cmp.setup {
+      window = {
+        completion = { -- rounded border; thin-style scrollbar
+          border = 'rounded',
+          scrollbar = '║',
+        },
+        documentation = { -- no border; native-style scrollbar
+          border = 'rounded',
+          scrollbar = '║',
+          -- other options
+        },
+      },
       completion = {
         completeopt = 'menu,menuone,preview,noselect',
       },
