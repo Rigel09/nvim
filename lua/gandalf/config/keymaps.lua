@@ -38,6 +38,15 @@ km('n', '<S-k>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 km('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
 km('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 
+-- Work with tabs
+km('n', '[t', '<cmd>tabp<cr>', { desc = 'Go to previous tab' })
+km('n', ']t', '<cmd>tabn<cr>', { desc = 'Go to next tab' })
+km('n', '<leader>tn', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
+km('n', '<leader>tc', '<cmd>tabclose<cr>', { desc = 'Close current tab' })
+km('n', '<leader>to', '<cmd>tabonly<cr>', { desc = 'Close all other tabs' })
+km('n', '<leader>tmp', '<cmd>-tabmove<cr>', { desc = 'Move tab previous' })
+km('n', '<leader>tmn', '<cmd>+tabmove<cr>', { desc = 'Move tab next' })
+
 -- save file
 km({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
