@@ -1,4 +1,5 @@
 local M = {
+  { import = 'gandalf.plugins.completions' },
   { import = 'gandalf.plugins.ui' },
   { import = 'gandalf.plugins.editor' },
   { import = 'gandalf.plugins.tree-sitter' },

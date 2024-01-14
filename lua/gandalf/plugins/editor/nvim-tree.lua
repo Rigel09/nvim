@@ -22,7 +22,7 @@ local M = {
       view = {
         adaptive_size = false,
         side = 'left',
-        width = 30,
+        width = 60,
         preserve_window_proportions = true,
       },
       git = {
