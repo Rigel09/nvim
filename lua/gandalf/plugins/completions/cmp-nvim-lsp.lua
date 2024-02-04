@@ -12,9 +12,7 @@ local M = {
   },
   config = function()
     local cmp = require 'cmp'
-
     local luasnip = require 'luasnip'
-
     local lspkind = require 'lspkind'
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
