@@ -11,6 +11,7 @@ local M = {
     -- { '<leader>fb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
     -- { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files (root dir)' },
     -- { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent' },
+    -- { '<leader>fR', '<cmd>Telescope lsp_references<cr>', desc = 'Recent' },
 
     -- git
     -- { '<leader>gc', '<cmd>Telescope git_commits<CR>', desc = 'Shows git commits' },
