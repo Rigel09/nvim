@@ -64,6 +64,17 @@ local M = {
         },
       },
     }
+    vim.api.nvim_create_autocmd({ 'CursorHoldI', 'TextChangedI' }, {
+      group = vim.api.nvim_create_augroup('cmp_complete_on_space', {}),
+      callback = function()
+        local line = vim.api.nvim_get_current_line()
+        local cursor = vim.api.nvim_win_get_cursor(0)[2]
+
+        if string.sub(line, cursor, cursor + 1) == ' ' then
+          require('cmp').complete()
+        end
+      end,
+    })
   end,
 }
 
