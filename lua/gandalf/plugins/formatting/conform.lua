@@ -1,3 +1,5 @@
+local slow_format_filetypes = {}
+
 local M = {
   'stevearc/conform.nvim',
   lazy = true,
@@ -19,7 +21,25 @@ local M = {
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end
-        return { timeout_ms = 1000, lsp_fallback = true }
+
+        -- Run slow formatters async
+        if slow_format_filetypes[vim.bo[bufnr].filetype] then
+          return
+        end
+        local function on_format(err)
+          if err and err:match 'timeout$' then
+            slow_format_filetypes[vim.bo[bufnr].filetype] = true
+          end
+        end
+
+        return { timeout_ms = 200, lsp_fallback = true }, on_format
+      end,
+
+      format_after_save = function(bufnr)
+        if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+          return
+        end
+        return { lsp_fallback = true }
       end,
     }
 
@@ -50,4 +70,6 @@ local M = {
     })
   end,
 }
+
+
 return M
