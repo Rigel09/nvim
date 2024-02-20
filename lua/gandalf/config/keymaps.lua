@@ -18,8 +18,8 @@ if os.getenv 'TMUX' then
   km('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', { desc = 'Go up a window', remap = true })
   km('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', { desc = 'Go right a window', remap = true })
 else
-  km('n', '<C-h>', '<C-w>h', { desc = 'Go left a window', remap = true })
   km('n', '<C-j>', '<C-w>j', { desc = 'Go down a window', remap = true })
+  km('n', '<C-h>', '<C-w>h', { desc = 'Go left a window', remap = true })
   km('n', '<C-k>', '<C-w>k', { desc = 'Go up a  window', remap = true })
   km('n', '<C-l>', '<C-w>l', { desc = 'Go right a window', remap = true })
 end
@@ -58,6 +58,7 @@ km('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quite all', noremap = true })
 
 -- Misc
 km('n', '<leader>cc', '<cmd>noh<cr>', { desc = 'Runs noh', noremap = true })
+km('i', '<C-l>', '<Del>', { desc = 'Delete Key in insert', noremap = true })
 
 -- Go into EX mode easily
 km('n', '<leader>pv', vim.cmd.Ex, { noremap = true })
