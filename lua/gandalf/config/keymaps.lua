@@ -58,7 +58,5 @@ km('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quite all', noremap = true })
 
 -- Misc
 km('n', '<leader>cc', '<cmd>noh<cr>', { desc = 'Runs noh', noremap = true })
+km('n', '<leader>fP', '<cmd>echo expand("%:p")<cr>', { desc = 'Prints abs path to file in active buffer.', noremap = true })
 km('i', '<C-l>', '<Del>', { desc = 'Delete Key in insert', noremap = true })
-
--- Go into EX mode easily
-km('n', '<leader>pv', vim.cmd.Ex, { noremap = true })

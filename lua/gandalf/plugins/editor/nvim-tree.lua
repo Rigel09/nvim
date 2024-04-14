@@ -36,11 +36,16 @@ local M = {
         open_file = {
           resize_window = true,
         },
+        change_dir = {
+          enable = true,
+          global = false,
+          restrict_above_cwd = true,
+        },
       },
       renderer = {
-        root_folder_label = false,
-        highlight_git = false,
-        highlight_opened_files = 'none',
+        root_folder_label = true,
+        highlight_git = true,
+        highlight_opened_files = 'all',
 
         indent_markers = {
           enable = false,
