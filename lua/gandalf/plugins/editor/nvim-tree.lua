@@ -39,7 +39,7 @@ local M = {
         change_dir = {
           enable = true,
           global = false,
-          restrict_above_cwd = true,
+          restrict_above_cwd = false,
         },
       },
       renderer = {
