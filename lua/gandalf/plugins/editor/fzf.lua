@@ -19,7 +19,9 @@ local M = {
     -- ------------------------------------------------------------
     -- LSP
     -- ------------------------------------------------------------
-    { '<leader>fr', '<cmd>FzfLua lsp_references<cr>', desc = 'Live grep current buffer' },
+    { '<leader>fr', '<cmd>FzfLua lsp_references<cr>', desc = 'Find LSP Reference' },
+    { '<leader>ws', '<cmd>FzfLua lsp_workspace_symbols<cr>', desc = 'Find Workspace Symbols' },
+    { '<leader>ds', '<cmd>FzfLua lsp_document_symbols<cr>', desc = 'Find Documnet Symbols' },
 
     -- ------------------------------------------------------------
     -- Misc
