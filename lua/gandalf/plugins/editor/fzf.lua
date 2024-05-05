@@ -27,7 +27,7 @@ local M = {
     -- Misc
     -- ------------------------------------------------------------
     { '<leader>ss', '<cmd>FzfLua spell_suggest<cr>', desc = 'Spelling Suggestions' },
-    { '<leader>ch', '<cmd>FzfLua command_history<cr>', desc = 'Spelling Suggestions' },
+    { '<leader>ch', '<cmd>FzfLua command_history<cr>', desc = 'Command History' },
   },
   config = function()
     -- calling `setup` is optional for customization
