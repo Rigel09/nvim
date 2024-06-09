@@ -5,33 +5,26 @@ local M = {
   version = false, -- telescope did only one release, so use HEAD for now
   dependencies = { 'nvim-lua/plenary.nvim' },
   keys = {
-    -- { '<leader>:', '<cmd>Telescope command_history<cr>', desc = 'Command History' },
-
+    -- ------------------------------------------------------------
     -- find
-    -- { '<leader>fb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
+    -- ------------------------------------------------------------
+    -- { '<leader>fb', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', desc = 'Find Buffers' },
     -- { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files (root dir)' },
-    -- { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent' },
-    -- { '<leader>fR', '<cmd>Telescope lsp_references<cr>', desc = 'Recent' },
+    -- { '<leader>fo', '<cmd>Telescope oldfiles<cr>', desc = 'Recent' },
+    -- { '<leader>fR', '<cmd>Telescope resume<cr>', desc = 'Resume Search' },
+    -- { '<leader>fw', '<cmd>Telescope grep_string<cr>', desc = 'Find word' },
+    -- { '<leader>lg', '<cmd>Telescope live_grep<cr>', desc = 'Grep (cwd)' },
 
-    -- git
-    -- { '<leader>gc', '<cmd>Telescope git_commits<CR>', desc = 'Shows git commits' },
-    -- { '<leader>gs', '<cmd>Telescope git_status<CR>', desc = 'Shows git status' },
-    -- { '<leader>gb', '<cmd>Telescope git_branches<CR>', desc = 'Shows available git branches' },
+    -- ------------------------------------------------------------
+    -- LSP
+    -- ------------------------------------------------------------
+    -- { '<leader>fr', '<cmd>Telescope lsp_references<cr>', desc = 'Find LSP Reference' },
 
+    -- ------------------------------------------------------------
     -- search
-    -- { '<leader>s"', '<cmd>Telescope registers<cr>', desc = 'Registers' },
-    -- { '<leader>sa', '<cmd>Telescope autocommands<cr>', desc = 'Auto Commands' },
-    -- { '<leader>sb', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Buffer' },
-    -- { '<leader>sC', '<cmd>Telescope commands<cr>', desc = 'Commands' },
-    -- { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Document diagnostics' },
-    -- { '<leader>sD', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace diagnostics' },
-    -- { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'Grep (cwd)' },
-    -- { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = 'Key Maps' },
-    -- { '<leader>sM', '<cmd>Telescope man_pages<cr>', desc = 'Man Pages' },
-    -- { '<leader>sm', '<cmd>Telescope marks<cr>', desc = 'Jump to Mark' },
-    -- { '<leader>so', '<cmd>Telescope vim_options<cr>', desc = 'Options' },
-    -- { '<leader>sR', '<cmd>Telescope resume<cr>', desc = 'Resume' },
-    -- { '<leader>sw', '<cmd>Telescope grep_string<cr>', desc = 'Find word' },
+    -- ------------------------------------------------------------
+    -- { '<leader>s"', '<cmd>Telescope registers<cr>', desc = 'Find Registers' },
+    -- { '<leader>ch', '<cmd>Telescope command_history<cr>', desc = 'Command History' },
   },
 }
 return M
