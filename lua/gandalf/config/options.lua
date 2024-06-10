@@ -28,7 +28,7 @@ o.pumheight = 10 --relative number of entries in a popup
 o.scrolloff = 5 -- Min number of lines to keep above / below the cursor
 
 --- See Here: https://neovim.io/doc/user/options.html
-o.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp' }
+o.sessionoptions = { 'buffers', 'curdir', 'folds', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp' }
 o.shiftround = true -- Shifts will be of multiple width
 o.shiftwidth = 2 -- shift width
 o.shortmess:append { W = true, I = true, c = true, C = true }
