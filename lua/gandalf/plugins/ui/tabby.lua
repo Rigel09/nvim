@@ -5,7 +5,7 @@ local M = {
   config = function()
     -- configs...
     require('tabby').setup()
-    require('tabby.tabline').use_preset('active_wins_at_tail', { buf_name = { mode = 'relative' } })
+    require('tabby.tabline').use_preset('active_wins_at_tail', { buf_name = { mode = 'shorten' } })
   end,
 }
 
