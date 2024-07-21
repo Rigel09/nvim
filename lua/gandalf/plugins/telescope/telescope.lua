@@ -1,8 +1,7 @@
 local M = {
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
-  tag = '0.1.4',
-  version = false, -- telescope did only one release, so use HEAD for now
+  tag = '0.1.8',
   dependencies = { 'nvim-lua/plenary.nvim' },
   keys = {
     -- ------------------------------------------------------------
