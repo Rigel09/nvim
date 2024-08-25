@@ -9,6 +9,6 @@ local auto_save_session_cb = function()
   vim.api.nvim_command 'mksession! .nvim/Session.vim'
 end
 
-vim.api.nvim_create_autocmd('ExitPre', {
-  callback = auto_save_session_cb,
-})
+-- vim.api.nvim_create_autocmd('ExitPre', {
+--   callback = auto_save_session_cb,
+-- })
