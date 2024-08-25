@@ -51,7 +51,7 @@ km('n', '<leader>tmn', '<cmd>+tabmove<cr>', { desc = 'Move tab next' })
 km({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
 -- lazy
-km('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
+km('n', '<leader>ll', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 
 -- Quit All
 km('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quite all', noremap = true })

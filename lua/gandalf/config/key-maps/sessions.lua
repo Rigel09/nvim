@@ -12,4 +12,4 @@ local reload_saved_session = function()
   end
 end
 
-km({ 'n' }, '<leader>ls', reload_saved_session, { desc = 'Reload saved Session', remap = true })
+-- km({ 'n' }, '<leader>ls', reload_saved_session, { desc = 'Reload saved Session', remap = true })
