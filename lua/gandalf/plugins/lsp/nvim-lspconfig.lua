@@ -203,6 +203,12 @@ local M = {
       capabilities = capabilities,
       on_attach = my_attach_func,
     }
+
+    lspconfig['yamlls'].setup {
+      handlers = handlers,
+      capabilities = capabilities,
+      on_attach = my_attach_func,
+    }
   end,
 }
 

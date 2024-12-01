@@ -49,6 +49,10 @@ local M = {
         -- ********************************
         -- 'codelldb', --rust
         'rust_analyzer', --rust
+
+        'clangd',
+
+        'yamlls',
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -63,6 +67,9 @@ local M = {
         'pylint', -- python linter
         'shellcheck', -- bash linter / formatter
         'mypy', --python
+        'yamlfmt',
+        'yamlfix',
+        'yamllint',
       },
     }
   end,
