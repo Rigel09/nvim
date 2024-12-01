@@ -134,6 +134,12 @@ local M = {
       end,
     }
 
+    lspconfig['cmake'].setup {
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = on_attach,
+    }
+
     -- -------------------------------------
     -- Lua
     -- -------------------------------------

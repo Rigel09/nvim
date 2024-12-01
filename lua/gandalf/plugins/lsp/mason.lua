@@ -60,6 +60,9 @@ local M = {
 
     mason_tool_installer.setup {
       ensure_installed = {
+        'cmakelang',
+        'cmakelint',
+        'cmake-language-server',
         'prettier', -- prettier formatter
         'stylua', -- lua formatter
         'isort', -- python formatter
