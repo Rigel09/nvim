@@ -137,8 +137,32 @@ local M = {
     lspconfig['cmake'].setup {
       capabilities = capabilities,
       handlers = handlers,
-      on_attach = on_attach,
+      on_attach = my_attach_func,
     }
+
+    lspconfig['dockerls'].setup {
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = my_attach_func,
+    }
+
+    lspconfig['docker_compose_language_service'].setup {
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = my_attach_func,
+    }
+
+    local function docker_fix()
+      local filename = vim.fn.expand '%:t'
+
+      if filename == 'docker-compose.yaml' then
+        vim.bo.filetype = 'yaml.docker-compose'
+        print 'matched!'
+      else
+        print(filename)
+      end
+    end
+    vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = docker_fix })
 
     -- -------------------------------------
     -- Lua

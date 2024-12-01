@@ -9,6 +9,7 @@ local M = {
       python = { 'pylint', 'mypy' },
       sh = { 'shellcheck' },
       cmake = { 'cmakelint' },
+      dockerfile = { 'hadolint' },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })

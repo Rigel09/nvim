@@ -63,6 +63,7 @@ local M = {
       'cmake',
       'cpp',
       'diff',
+      'dockerfile',
       'html',
       'javascript',
       'jsdoc',

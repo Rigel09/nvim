@@ -63,6 +63,9 @@ local M = {
         'cmakelang',
         'cmakelint',
         'cmake-language-server',
+        'docker_compose_language_service',
+        'dockerls',
+        'hadolint',
         'prettier', -- prettier formatter
         'stylua', -- lua formatter
         'isort', -- python formatter
