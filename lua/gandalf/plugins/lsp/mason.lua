@@ -47,7 +47,6 @@ local M = {
 
         -- rust
         -- ********************************
-        -- 'codelldb', --rust
         'rust_analyzer', --rust
 
         'clangd',
@@ -63,6 +62,7 @@ local M = {
         'cmakelang',
         'cmakelint',
         'cmake-language-server',
+        'codelldb', --rust
         'docker_compose_language_service',
         'dockerls',
         'hadolint',

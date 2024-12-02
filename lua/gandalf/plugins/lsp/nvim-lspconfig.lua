@@ -208,22 +208,22 @@ local M = {
     -- -------------------------------------
     -- Rust
     -- -------------------------------------
-    lspconfig['rust_analyzer'].setup {
-      capabilities = capabilities,
-      handlers = handlers,
-      on_attach = my_attach_func,
-      filetypes = { 'rust' },
-      root_dir = require('lspconfig.util').root_pattern 'Cargo.toml',
-      settings = {
-        ['rust_analyzer'] = {
-          checkOnSave = {
-            enable = true,
-            command = 'clippy',
-          },
-          cargo = { allFeatures = true },
-        },
-      },
-    }
+    -- lspconfig['rust_analyzer'].setup {
+    --   capabilities = capabilities,
+    --   handlers = handlers,
+    --   on_attach = my_attach_func,
+    --   filetypes = { 'rust' },
+    --   root_dir = require('lspconfig.util').root_pattern 'Cargo.toml',
+    --   settings = {
+    --     ['rust_analyzer'] = {
+    --       checkOnSave = {
+    --         enable = true,
+    --         command = 'clippy',
+    --       },
+    --       cargo = { allFeatures = true },
+    --     },
+    --   },
+    -- }
 
     -- -------------------------------------
     -- Python
