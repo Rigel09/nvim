@@ -42,7 +42,8 @@ local M = {
         -- python
         -- ********************************
         -- 'jedi_language_server', --python
-        'pylsp', --python
+        -- 'pylsp', --python
+        'basedpyright',
         -- 'pyright', --python
 
         -- rust
@@ -72,6 +73,7 @@ local M = {
         'black', -- python formatter
         'pylint', -- python linter
         'shellcheck', -- bash linter / formatter
+        'ruff',
         'mypy', --python
         'yamlfmt',
         'yamlfix',

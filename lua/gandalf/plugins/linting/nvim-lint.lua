@@ -6,7 +6,8 @@ local M = {
     local lint = require 'lint'
 
     lint.linters_by_ft = {
-      python = { 'pylint', 'mypy' },
+      -- python = { 'pylint', 'mypy' },
+      python = { 'ruff' },
       sh = { 'shellcheck' },
       cmake = { 'cmakelint' },
       dockerfile = { 'hadolint' },

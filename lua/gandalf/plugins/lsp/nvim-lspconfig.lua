@@ -228,7 +228,7 @@ local M = {
     -- -------------------------------------
     -- Python
     -- -------------------------------------
-    lspconfig['pylsp'].setup {
+    lspconfig['basedpyright'].setup {
       handlers = handlers,
       capabilities = capabilities,
       on_attach = my_attach_func,
