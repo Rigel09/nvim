@@ -55,6 +55,7 @@
   "rustaceanvim": { "branch": "master", "commit": "0790912df13835ca9bdd5e17efc91a58629f2a23" },
   "tabby.nvim": { "branch": "main", "commit": "8d0216f543c07a89897d1021213793ea7d8991a1" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
+  "timber.nvim": { "branch": "main", "commit": "f45a27c005d53b2ec67cafa9df2e267106f0b459" },
   "tint.nvim": { "branch": "master", "commit": "02bd0527a315a80e4e25bb2dd7b6994fb0daae01" },
   "trouble.nvim": { "branch": "main", "commit": "1f71d71232173c1670ad4b9164d7f060586e2236" },
   "undotree": { "branch": "master", "commit": "56c684a805fe948936cda0d1b19505b84ad7e065" },
