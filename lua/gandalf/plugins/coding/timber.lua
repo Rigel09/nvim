@@ -8,14 +8,14 @@ local M = {
       function()
         require('timber.actions').clear_log_statements { global = false }
       end,
-      desc = 'Find Buffers',
+      desc = 'Timber: Clear log statements',
     },
     {
       '<leader>glt',
       function()
         require('timber.actions').toggle_comment_log_statements { global = false }
       end,
-      desc = 'Find Buffers',
+      desc = 'Timber: Toggle comments',
     },
   },
   config = function()
