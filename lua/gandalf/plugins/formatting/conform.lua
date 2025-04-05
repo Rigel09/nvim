@@ -41,6 +41,20 @@ local M = {
         end
         return { lsp_fallback = true }
       end,
+
+      formatters = {
+        shellcheck = {
+          prepend_args = function(self, ctx)
+            return { '-x' }
+          end,
+        },
+      },
+    }
+
+    require('conform').formatters.shellcheck = {
+      prepend_args = { '-x' },
+      -- The base args are { "-filename", "$FILENAME" } so the final args will be
+      -- { "-i", "2", "-filename", "$FILENAME" }
     }
 
     vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()

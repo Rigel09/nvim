@@ -55,6 +55,7 @@ o.updatetime = 200 --num ms of inactivity before swap file is written to disk
 o.virtualedit = 'block' -- you can place the cursor where there is no visibile character in visual mode only
 o.wildmode = 'longest:full,full' --command line completion mode
 o.winminwidth = 5 -- minimum window width
+o.winborder = 'double'
 o.wrap = false -- don't wrap  -  its ugly
 o.fillchars = {
   foldopen = '',
