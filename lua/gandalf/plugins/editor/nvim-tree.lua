@@ -3,7 +3,7 @@ local M = {
   event = 'VeryLazy',
   keys = {
     {
-      '<leader>fc',
+      '<leader>fe',
       function()
         local api = require 'nvim-tree.api'
 
