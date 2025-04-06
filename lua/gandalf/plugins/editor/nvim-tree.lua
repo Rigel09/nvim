@@ -2,7 +2,19 @@ local M = {
   'nvim-tree/nvim-tree.lua',
   event = 'VeryLazy',
   keys = {
-    { '<leader>fe', '<cmd>NvimTreeToggle<cr>', desc = 'Toggles Nvim Tree' },
+    {
+      '<leader>fc',
+      function()
+        local api = require 'nvim-tree.api'
+
+        if api.tree.is_visible() then
+          api.tree.close()
+        else
+          api.tree.open()
+        end
+      end,
+      desc = 'Toggles Nvim Tree',
+    },
   },
   config = function()
     require('nvim-tree').setup {
