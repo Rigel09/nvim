@@ -4,6 +4,12 @@ local M = {
   'stevearc/conform.nvim',
   lazy = true,
   event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
+
+  keys = {
+
+    { '<leader>fd', '<cmd>FormatDisable<cr>', desc = 'Disable autoformat-on-save' },
+    { '<leader>fE', '<cmd>FormatEnable<cr>', desc = 'Enabled autoformat-on-save' },
+  },
   config = function()
     local conform = require 'conform'
 
@@ -51,19 +57,11 @@ local M = {
       },
     }
 
-    require('conform').formatters.shellcheck = {
+    conform.formatters.shellcheck = {
       prepend_args = { '-x' },
       -- The base args are { "-filename", "$FILENAME" } so the final args will be
       -- { "-i", "2", "-filename", "$FILENAME" }
     }
-
-    vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()
-      conform.format {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
-      }
-    end, { desc = 'Format file or range (in visual mode)' })
 
     vim.api.nvim_create_user_command('FormatDisable', function(args)
       if args.bang then
@@ -72,6 +70,7 @@ local M = {
       else
         vim.g.disable_autoformat = true
       end
+      require 'notify' 'Disabled autoformat-on-save'
     end, {
       desc = 'Disable autoformat-on-save',
       bang = true,
@@ -79,6 +78,7 @@ local M = {
     vim.api.nvim_create_user_command('FormatEnable', function()
       vim.b.disable_autoformat = false
       vim.g.disable_autoformat = false
+      require 'notify' 'Enabled autoformat-on-save'
     end, {
       desc = 'Re-enable autoformat-on-save',
     })
