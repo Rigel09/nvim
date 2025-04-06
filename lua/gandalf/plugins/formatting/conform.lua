@@ -19,7 +19,7 @@ local M = {
         yaml = { 'prettier' },
         markdown = { 'prettier' },
         lua = { 'stylua' },
-        python = { 'ruff' },
+        python = { 'black' },
         sh = { 'shellcheck', 'shellharden', 'shfmt' },
       },
       format_on_save = function(bufnr)

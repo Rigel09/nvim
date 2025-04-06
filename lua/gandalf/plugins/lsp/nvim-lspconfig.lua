@@ -49,10 +49,10 @@ local M = {
       end,
     }
 
-    lspconfig['cmake'].setup {
-      capabilities = capabilities,
-      on_attach = my_attach_func,
-    }
+    -- lspconfig['cmake'].setup {
+    --   capabilities = capabilities,
+    --   on_attach = my_attach_func,
+    -- }
 
     lspconfig['dockerls'].setup {
       capabilities = capabilities,

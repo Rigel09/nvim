@@ -22,8 +22,8 @@ local M = {
     require('timber').setup {
       log_templates = {
         default = {
-          python = [[print(f"%log_marker %filename:%line_number - %log_target: {%log_target}")]],
-          cpp = [[std::cout << "%log_marker %filename:%line_number - %log_target: " << %log_target << std::endl;]],
+          python = [[print(f"%log_marker %filename - %log_target: {%log_target}")]],
+          cpp = [[std::cout << "%log_marker %filename - %log_target: " << %log_target << std::endl;]],
         },
       },
       log_marker = 'JLOG',

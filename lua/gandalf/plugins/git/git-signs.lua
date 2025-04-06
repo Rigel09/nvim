@@ -60,7 +60,7 @@ end
 
 local M = {
   'lewis6991/gitsigns.nvim',
-  -- config = true,
+  lazy = false,
   config = function()
     require('gitsigns').setup { on_attach = git_signs_on_attach }
   end,
