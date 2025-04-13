@@ -4,14 +4,94 @@ local M = {
   lazy = false,
   keys = {
     { '<leader>lt', '<cmd>lua require("snacks").lazygit.open()<cr>', desc = 'LazyGit' },
+
+    -- ------------------------------------------------------------
+    -- Find
+    -- ------------------------------------------------------------
+    {
+      '<leader>fb',
+      function()
+        require('snacks').picker.buffers()
+      end,
+      desc = 'Find Buffers',
+    },
+    {
+      '<leader>ff',
+      function()
+        require('snacks').picker.files()
+      end,
+      desc = 'Find Files (root dir)',
+    },
+    -- { '<leader>fo', function() require('snacks').picker. end, desc = 'Find Old Files' },
+    {
+      '<leader>fR',
+      function()
+        require('snacks').picker.resume()
+      end,
+      desc = 'Resume prev search',
+    },
+    {
+      '<leader>fw',
+      function()
+        require('snacks').picker.grep_word()
+      end,
+      desc = 'Find Word Under Cursor',
+      mode = { 'n', 'x' },
+    },
+    {
+      '<leader>lg',
+      function()
+        require('snacks').picker.grep()
+      end,
+      desc = 'Live grep project',
+    },
+    {
+      '<leader>lb',
+      function()
+        require('snacks').picker.lines()
+      end,
+      desc = 'Live grep current buffer',
+    },
+
+    -- ------------------------------------------------------------
+    -- LSP
+    -- ------------------------------------------------------------
+    {
+      '<leader>fr',
+      function()
+        require('snacks').picker.lsp_references()
+      end,
+      desc = 'Find LSP Reference',
+    },
+    {
+      'gd',
+      function()
+        require('snacks').picker.lsp_definitions()
+      end,
+      desc = 'Show LSP definitions',
+    },
+    {
+      '<leader>ds',
+      function()
+        require('snacks').picker.lsp_symbols()
+      end,
+      desc = 'Show LSP document symbols',
+    },
+
+    -- ------------------------------------------------------------
+    -- Misc
+    -- ------------------------------------------------------------
+    {
+      '<leader>ss',
+      function()
+        require('snacks').picker.spelling()
+      end,
+      desc = 'Spelling Suggestions',
+    },
   },
   config = function()
     local snacks = require 'snacks'
     snacks.setup {
-      --
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
       bigfile = { enabled = true },
       bufdelete = { enabled = true },
       dashboard = { enabled = true },

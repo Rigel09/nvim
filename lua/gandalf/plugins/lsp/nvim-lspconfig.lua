@@ -5,12 +5,6 @@ local my_attach_func = function(client, bufnr)
 
   opts.buffer = bufnr
 
-  opts.desc = 'Show LSP definitions'
-  keymap.set('n', 'gd', '<cmd>FzfLua lsp_definitions<CR>', opts) -- show lsp definitions
-
-  opts.desc = 'Show LSP document symbols'
-  keymap.set('n', '<leader>ds', '<cmd>FzfLua lsp_document_symbols<CR>', opts)
-
   opts.desc = 'Show documentation for what is under cursor'
   keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
