@@ -8,8 +8,8 @@ vim.lsp.enable 'bashls'
 if vim.fn.isdirectory '/tools/Xilinx' == 1 then
   vim.lsp.config('clangd', {
     cmd = {
-      home_dir .. '.local/share/nvim/mason/bin/clangd',
-      '--query-driver=/tools/Xilinx/Vitis/2023.1/gnu/aarch/lin/gcc-arm-none-eabi/bin/*,/usr/bin/*',
+      home_dir .. '/.local/share/nvim/mason/bin/clangd',
+      '--query-driver=/tools/Xilinx/Vitis/2023.1/gnu/aarch32/lin/gcc-arm-none-eabi/bin/*,/usr/bin/*',
     },
   })
 end
@@ -28,8 +28,6 @@ local function docker_fix()
 
   if filename == 'docker-compose.yaml' then
     vim.bo.filetype = 'yaml.docker-compose'
-  else
-    print(filename)
   end
 end
 vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = docker_fix })

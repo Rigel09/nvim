@@ -37,7 +37,12 @@ local git_signs_on_attach = function(bufnr)
   end, { desc = 'Git - Reset Hunk' })
 
   km('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Git - Stage Buffer' })
-  km('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'Git - Undo Stage Hunk' })
+  km(
+    'n',
+    '<leader>hu',
+    gitsigns.undo_stage_hunk,
+    { desc = 'Git - Undo Stage Hunk' }
+  )
   km('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Git - Reset Buffer' })
   km('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Git - Preview Hunk' })
 
@@ -45,20 +50,33 @@ local git_signs_on_attach = function(bufnr)
     gitsigns.blame_line { full = true }
   end, { desc = 'Git - Blame Line' })
 
-  km('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Git - Toggle Current Line Blame' })
+  km(
+    'n',
+    '<leader>tb',
+    gitsigns.toggle_current_line_blame,
+    { desc = 'Git - Toggle Current Line Blame' }
+  )
   km('n', '<leader>hd', gitsigns.diffthis, { desc = 'Git - Diff This' })
 
   km('n', '<leader>hD', function()
     gitsigns.diffthis '~'
   end, { desc = 'Git - Diff This' })
 
-  km('n', '<leader>td', gitsigns.toggle_deleted, { desc = 'Git - Toggle Deleted' })
+  km(
+    'n',
+    '<leader>td',
+    gitsigns.toggle_deleted,
+    { desc = 'Git - Toggle Deleted' }
+  )
 
   -- Text object
-  km({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Git - Select Hunk' })
+  km(
+    { 'o', 'x' },
+    'ih',
+    ':<C-U>Gitsigns select_hunk<CR>',
+    { desc = 'Git - Select Hunk' }
+  )
 end
 
-vim.pack.add({"https://github.com/lewis6991/gitsigns.nvim"})
+vim.pack.add { 'https://github.com/lewis6991/gitsigns.nvim' }
 require('gitsigns').setup { on_attach = git_signs_on_attach }
-
-

@@ -1,7 +1,6 @@
+vim.pack.add { 'https://github.com/nvim-tree/nvim-tree.lua' }
 
-vim.pack.add({"https://github.com/nvim-tree/nvim-tree.lua"})
-
-local tree = require('nvim-tree')
+local tree = require 'nvim-tree'
 tree.setup {
   -- filters = {
   --   dotfiles = false,
@@ -87,13 +86,17 @@ local km = vim.keymap.set
 
 -- Toggle tree func
 local toggle_nvim_tree = function()
-    local api = require 'nvim-tree.api'
+  local api = require 'nvim-tree.api'
 
-    if api.tree.is_visible() then
-      api.tree.close()
-    else
-      api.tree.open()
-    end
+  if api.tree.is_visible() then
+    api.tree.close()
+  else
+    api.tree.open()
+  end
 end
-km('n', '<leader>fe', toggle_nvim_tree, {desc = "Toggles Nvim-Tree", noremap = true})
-
+km(
+  'n',
+  '<leader>fe',
+  toggle_nvim_tree,
+  { desc = 'Toggles Nvim-Tree', noremap = true }
+)

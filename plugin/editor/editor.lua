@@ -18,7 +18,12 @@ require('arena').setup()
 require('grug-far').setup {}
 
 local km = vim.keymap.set
-km('n', '<leader>at', '<cmd>lua require("arena").toggle {}<cr>', { desc = 'Arena Toggle' })
+km(
+  'n',
+  '<leader>at',
+  '<cmd>lua require("arena").toggle {}<cr>',
+  { desc = 'Arena Toggle' }
+)
 km(
   { 'n', 'x' },
   '<leader>fs',
