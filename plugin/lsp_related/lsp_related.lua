@@ -82,13 +82,13 @@ mason_tool_installer.setup {
 local km = vim.keymap.set
 km(
   'n',
-  '<leader>xx',
+  '<leader>xX',
   '<cmd>Trouble diagnostics toggle<cr>',
   { desc = 'Diagnostics (Trouble)' }
 )
 km(
   'n',
-  '<leader>xX',
+  '<leader>xx',
   '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
   { desc = 'Buffer Diagnostics (Trouble)' }
 )
