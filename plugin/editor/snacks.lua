@@ -99,3 +99,9 @@ km(
   "<cmd>lua require('snacks').picker.spelling()<cr>",
   { desc = 'Spelling Suggestions', noremap = true }
 )
+km(
+  'n',
+  '<leader>lt',
+  "<cmd>lua require('snacks').lazygit()<cr>",
+  { desc = 'Lazy Git', noremap = true }
+)
