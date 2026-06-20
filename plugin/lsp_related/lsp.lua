@@ -17,7 +17,13 @@ vim.lsp.enable 'clangd'
 vim.lsp.enable 'dockerls'
 vim.lsp.enable 'docker_compose_language_service'
 vim.lsp.enable 'jsonls'
+
+vim.lsp.config(
+  'lua_ls',
+  { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
+)
 vim.lsp.enable 'lua_ls'
+
 vim.lsp.enable 'matlab_ls'
 -- vim.lsp.enable 'pylsp'
 vim.lsp.enable 'basedpyright'
