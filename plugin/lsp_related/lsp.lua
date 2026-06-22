@@ -14,6 +14,12 @@ if vim.fn.isdirectory '/tools/Xilinx' == 1 then
   })
 end
 vim.lsp.enable 'clangd'
+-- vim.lsp.config {
+--   'emmet_language_server',
+--   { init_options = { showSuggestionsAsSnippets = true } },
+-- }
+vim.lsp.enable 'emmet_language_server'
+vim.lsp.enable 'eslint'
 vim.lsp.enable 'dockerls'
 vim.lsp.enable 'docker_compose_language_service'
 vim.lsp.enable 'jsonls'

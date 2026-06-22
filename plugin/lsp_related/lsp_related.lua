@@ -43,6 +43,10 @@ mason_lspconfig.setup {
 
     'clangd', -- c++
 
+    -- 'emmet_ls', -- javascript / typescript
+    'emmet_language_server', -- javascript / typescript
+    'eslint',
+
     'yamlls', -- yaml
   },
   -- auto-install configured servers (with lspconfig)
