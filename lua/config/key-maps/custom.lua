@@ -13,10 +13,10 @@ local swapBoolean = function()
     vim.notify('current line is ' .. cur_line)
   end
 
-  local true_regex = vim.regex '.*\\s\\(true\\)\\|\\(True\\)\\|\\(TRUE\\).*'
+  local true_regex = vim.regex '.*\\(true\\)\\|\\(True\\)\\|\\(TRUE\\).*'
   local contains_true = true_regex:match_str(cur_line)
 
-  local false_regex = vim.regex '.*\\s\\(false\\)\\|\\(False\\)\\|\\(FALSE\\).*'
+  local false_regex = vim.regex '.*\\(false\\)\\|\\(False\\)\\|\\(FALSE\\).*'
   local contains_false = false_regex:match_str(cur_line)
 
   if contains_true and contains_false then

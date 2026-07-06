@@ -18,7 +18,7 @@ vim.lsp.enable 'clangd'
 --   'emmet_language_server',
 --   { init_options = { showSuggestionsAsSnippets = true } },
 -- }
-vim.lsp.enable 'emmet_language_server'
+-- vim.lsp.enable 'emmet_language_server'
 vim.lsp.enable 'eslint'
 vim.lsp.enable 'dockerls'
 vim.lsp.enable 'docker_compose_language_service'
@@ -34,6 +34,8 @@ vim.lsp.enable 'matlab_ls'
 -- vim.lsp.enable 'pylsp'
 vim.lsp.enable 'basedpyright'
 vim.lsp.enable 'yamlls'
+
+vim.lsp.enable 'vtsls'
 
 local function docker_fix()
   local filename = vim.fn.expand '%:t'

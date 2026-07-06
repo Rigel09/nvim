@@ -5,13 +5,11 @@ vim.pack.add {
   'https://github.com/folke/trouble.nvim',
 }
 
--- import mason
 local mason = require 'mason'
-
--- import mason-lspconfig
 local mason_lspconfig = require 'mason-lspconfig'
-
 local mason_tool_installer = require 'mason-tool-installer'
+
+require('trouble').setup()
 
 -- enable mason and configure icons
 mason.setup {
@@ -46,6 +44,7 @@ mason_lspconfig.setup {
     -- 'emmet_ls', -- javascript / typescript
     'emmet_language_server', -- javascript / typescript
     'eslint',
+    'vtsls',
 
     'yamlls', -- yaml
   },
