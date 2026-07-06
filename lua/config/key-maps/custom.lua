@@ -5,12 +5,10 @@ local swapBoolean = function()
   local cur_line = ''
 
   local mode = vim.fn.mode()
-  vim.notify('mode is ' .. mode)
   if mode == 'n' then
     cur_line = vim.api.nvim_get_current_line()
   elseif mode == 'V' or mode == '^V' then
     cur_line = vim.fn.getregionpos(vim.fn.getpos 'v', vim.fn.getpos '.')
-    vim.notify('current line is ' .. cur_line)
   end
 
   local true_regex = vim.regex '.*\\(true\\)\\|\\(True\\)\\|\\(TRUE\\).*'
