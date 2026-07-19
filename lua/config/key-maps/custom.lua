@@ -32,6 +32,41 @@ local swapBoolean = function()
   end
 end
 
+local swapCppIncludeBrackets = function()
+  ---@type string
+  local cur_line = ''
+
+  local mode = vim.fn.mode()
+  if mode == 'n' then
+    cur_line = vim.api.nvim_get_current_line()
+  elseif mode == 'V' or mode == '^V' then
+    cur_line = vim.fn.getregionpos(vim.fn.getpos 'v', vim.fn.getpos '.')
+  end
+
+  local quote_regex = vim.regex '".*"'
+  local contains_quotes = quote_regex:match_str(cur_line)
+
+  local bracket_regex = vim.regex '<.*>'
+  local contains_bracket = bracket_regex:match_str(cur_line)
+
+  if contains_quotes and contains_bracket then
+    vim.notify 'Found both brackets and quotes, replace not completed'
+  elseif contains_bracket then
+    local new_line = string.gsub(cur_line, '<(.*)>', '"%1"')
+    vim.api.nvim_set_current_line(new_line)
+  elseif contains_quotes then
+    local new_line = string.gsub(cur_line, '"(.*)"', '<%1>')
+    vim.api.nvim_set_current_line(new_line)
+  end
+end
+
+vim.keymap.set(
+  { 'n' },
+  '<leader>sb',
+  swapCppIncludeBrackets,
+  { desc = 'Swap CPP include styles "" -> <> and vise versa' }
+)
+
 vim.keymap.set(
   { 'n' },
   '<leader>af',
