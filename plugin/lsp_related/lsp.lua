@@ -45,3 +45,10 @@ local function docker_fix()
   end
 end
 vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = docker_fix })
+
+vim.keymap.set(
+  'n',
+  '<leader>sh',
+  '<cmd>LspClangdSwitchSourceHeader<cr>',
+  { desc = 'Swap between C/C++ header and source files.' }
+)
