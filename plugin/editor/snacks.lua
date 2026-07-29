@@ -7,7 +7,59 @@ local snacks = require 'snacks'
 snacks.setup {
   bigfile = { enabled = true },
   bufdelete = { enabled = true },
-  dashboard = { enabled = false },
+  dashboard = {
+    enabled = true,
+    formats = {
+      key = function(item)
+        return {
+          { '[', hl = 'special' },
+          { item.key, hl = 'key' },
+          { ']', hl = 'special' },
+        }
+      end,
+    },
+    sections = {
+      { section = 'header' },
+      { section = 'keys', gap = 1, padding = 1 },
+      {
+        section = 'recent_files',
+        cwd = true,
+        limit = 15,
+        title = 'Recent Files',
+        padding = { 2, 0 },
+        indent = 2,
+      },
+    },
+    preset = {
+      keys = {
+        {
+          icon = ' ',
+          key = 'f',
+          desc = 'Find File',
+          action = ":lua Snacks.dashboard.pick('files')",
+        },
+        {
+          icon = ' ',
+          key = 'g',
+          desc = 'Find Text',
+          action = ":lua Snacks.dashboard.pick('live_grep')",
+        },
+        {
+          icon = ' ',
+          key = 'r',
+          desc = 'Recent Files',
+          action = ":lua Snacks.dashboard.pick('oldfiles')",
+        },
+        {
+          icon = ' ',
+          key = 's',
+          desc = 'Restore Session',
+          action = ':lua require("persistence").load()',
+        },
+        { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+      },
+    },
+  },
   indent = { enabled = true },
   input = { enabled = true },
   lazygit = { enabled = true },
