@@ -36,5 +36,5 @@ km(
   { 'n' },
   '<leader>rl',
   '<cmd>lua require("persistence").load()<cr>',
-  { desc = ' rip substitute' }
+  { desc = 'Load last session for this directory.' }
 )
