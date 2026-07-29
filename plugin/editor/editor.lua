@@ -7,6 +7,7 @@ vim.pack.add {
   'https://github.com/MagicDuck/grug-far.nvim',
   'https://github.com/chrisgrieser/nvim-rip-substitute',
   'https://github.com/christoomey/vim-tmux-navigator',
+  'https://github.com/folke/persistence.nvim',
 }
 
 require('spelunk').setup {
@@ -16,6 +17,7 @@ require('spelunk').setup {
 require('which-key').setup()
 require('arena').setup()
 require('grug-far').setup {}
+require('persistence').setup { branch = false }
 
 local km = vim.keymap.set
 km(
@@ -28,5 +30,11 @@ km(
   { 'n', 'x' },
   '<leader>fs',
   '<cmd>lua require("rip-substitute").sub()<cr>',
+  { desc = ' rip substitute' }
+)
+km(
+  { 'n' },
+  '<leader>rl',
+  '<cmd>lua require("persistence").load()<cr>',
   { desc = ' rip substitute' }
 )
