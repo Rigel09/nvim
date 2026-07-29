@@ -17,6 +17,12 @@ local swapBoolean = function()
   local false_regex = vim.regex '.*\\(false\\)\\|\\(False\\)\\|\\(FALSE\\).*'
   local contains_false = false_regex:match_str(cur_line)
 
+  local on_regex = vim.regex '.*\\(on\\)\\|\\(On\\)\\|\\(ON\\).*'
+  local contains_on = on_regex:match_str(cur_line)
+
+  local off_regex = vim.regex '.*\\(off\\)\\|\\(Off\\)\\|\\(OFF\\).*'
+  local contains_off = off_regex:match_str(cur_line)
+
   if contains_true and contains_false then
     vim.notify 'Found both true and false, replace not completed'
   elseif contains_true then
@@ -28,6 +34,16 @@ local swapBoolean = function()
     local new_line = string.gsub(cur_line, 'false', 'true')
     new_line = string.gsub(new_line, 'False', 'True')
     new_line = string.gsub(new_line, 'FALSE', 'TRUE')
+    vim.api.nvim_set_current_line(new_line)
+  elseif contains_on then
+    local new_line = string.gsub(cur_line, 'on', 'off')
+    new_line = string.gsub(new_line, 'On', 'Off')
+    new_line = string.gsub(new_line, 'ON', 'OFF')
+    vim.api.nvim_set_current_line(new_line)
+  elseif contains_off then
+    local new_line = string.gsub(cur_line, 'off', 'on')
+    new_line = string.gsub(new_line, 'Off', 'On')
+    new_line = string.gsub(new_line, 'OFF', 'ON')
     vim.api.nvim_set_current_line(new_line)
   end
 end
