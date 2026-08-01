@@ -8,43 +8,48 @@ local swapBoolean = function()
   if mode == 'n' then
     cur_line = vim.api.nvim_get_current_line()
   elseif mode == 'V' or mode == '^V' then
-    cur_line = vim.fn.getregionpos(vim.fn.getpos 'v', vim.fn.getpos '.')
+    -- This may be helpful for this
+    -- https://github.com/saidelike/cursorless/pull/9/files
+    -- local start, stop =
+    --   vim.fn.getregionpos(vim.fn.getpos 'v', vim.fn.getpos '.')
+    -- vim.print('start: ' .. vim.inspect(start))
+    vim.notify 'Cant use in visual mode yet'
+    return
   end
 
-  local true_regex = vim.regex '.*\\(true\\)\\|\\(True\\)\\|\\(TRUE\\).*'
-  local contains_true = true_regex:match_str(cur_line)
+  local replace_lut = {
+    On = 'Off',
+    ON = 'OFF',
+    on = 'off',
+    Off = 'On',
+    OFF = 'ON',
+    off = 'on',
+    True = 'False',
+    TRUE = 'FALSE',
+    False = 'True',
+    FALSE = 'TRUE',
+  }
+  replace_lut['true'] = 'false'
+  replace_lut['false'] = 'true'
 
-  local false_regex = vim.regex '.*\\(false\\)\\|\\(False\\)\\|\\(FALSE\\).*'
-  local contains_false = false_regex:match_str(cur_line)
+  local regex =
+    vim.regex '\\v<(On|ON|on|Off|OFF|off|true|True|TRUE|false|False|FALSE)>'
+  local start, stop = regex:match_str(cur_line)
 
-  local on_regex = vim.regex '.*\\(on\\)\\|\\(On\\)\\|\\(ON\\).*'
-  local contains_on = on_regex:match_str(cur_line)
+  if start and stop then
+    local val = string.sub(cur_line, start + 1, stop)
+    local new_val = replace_lut[val]
 
-  local off_regex = vim.regex '.*\\(off\\)\\|\\(Off\\)\\|\\(OFF\\).*'
-  local contains_off = off_regex:match_str(cur_line)
-
-  if contains_true and contains_false then
-    vim.notify 'Found both true and false, replace not completed'
-  elseif contains_true then
-    local new_line = string.gsub(cur_line, 'true', 'false')
-    new_line = string.gsub(new_line, 'True', 'False')
-    new_line = string.gsub(new_line, 'TRUE', 'FALSE')
-    vim.api.nvim_set_current_line(new_line)
-  elseif contains_false then
-    local new_line = string.gsub(cur_line, 'false', 'true')
-    new_line = string.gsub(new_line, 'False', 'True')
-    new_line = string.gsub(new_line, 'FALSE', 'TRUE')
-    vim.api.nvim_set_current_line(new_line)
-  elseif contains_on then
-    local new_line = string.gsub(cur_line, 'on', 'off')
-    new_line = string.gsub(new_line, 'On', 'Off')
-    new_line = string.gsub(new_line, 'ON', 'OFF')
-    vim.api.nvim_set_current_line(new_line)
-  elseif contains_off then
-    local new_line = string.gsub(cur_line, 'off', 'on')
-    new_line = string.gsub(new_line, 'Off', 'On')
-    new_line = string.gsub(new_line, 'OFF', 'ON')
-    vim.api.nvim_set_current_line(new_line)
+    if new_val then
+      local new_line = string.sub(cur_line, 0, start)
+        .. new_val
+        .. string.sub(cur_line, stop + 1)
+      vim.api.nvim_set_current_line(new_line)
+    else
+      vim.notify('Failed to find replacement for ' .. val)
+    end
+  else
+    vim.notify 'Replacement REGEX failed to match'
   end
 end
 
@@ -84,7 +89,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-  { 'n' },
+  { 'n', 'v' },
   '<leader>af',
   swapBoolean,
   { desc = 'Swap Boolean', remap = true }
