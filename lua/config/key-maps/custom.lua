@@ -18,22 +18,49 @@ local swapBoolean = function()
   end
 
   local replace_lut = {
+    on = 'off',
     On = 'Off',
     ON = 'OFF',
-    on = 'off',
-    Off = 'On',
-    OFF = 'ON',
-    off = 'on',
     True = 'False',
     TRUE = 'FALSE',
-    False = 'True',
-    FALSE = 'TRUE',
+    enabled = 'disabled',
+    Enabled = 'Disabled',
+    ENABLED = 'DISABLED',
+    yes = 'no',
+    Yes = 'No',
+    YES = 'NO',
+    active = 'inactive',
+    Active = 'Inactive',
+    ACTIVE = 'INACTIVE',
+    low = 'high',
+    Low = 'High',
+    LOW = 'HIGH',
   }
   replace_lut['true'] = 'false'
-  replace_lut['false'] = 'true'
+  replace_lut['0'] = '1'
 
-  local regex =
-    vim.regex '\\v<(On|ON|on|Off|OFF|off|true|True|TRUE|false|False|FALSE)>'
+  local temp_lut = replace_lut
+  for x, y in pairs(temp_lut) do
+    replace_lut[y] = x
+  end
+
+  ---@type string
+  local regex_str = '\\v<('
+  ---@type boolean
+  local first = true
+  for x, y in pairs(replace_lut) do
+    if not first then
+      regex_str = regex_str .. '|'
+    end
+    regex_str = regex_str .. x
+    first = false
+  end
+
+  regex_str = regex_str .. ')>'
+
+  vim.print(regex_str)
+
+  local regex = vim.regex(regex_str)
   local start, stop = regex:match_str(cur_line)
 
   if start and stop then
