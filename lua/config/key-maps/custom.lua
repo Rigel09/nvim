@@ -58,8 +58,6 @@ local swapBoolean = function()
 
   regex_str = regex_str .. ')>'
 
-  vim.print(regex_str)
-
   local regex = vim.regex(regex_str)
   local start, stop = regex:match_str(cur_line)
 
