@@ -37,6 +37,8 @@ vim.lsp.enable 'yamlls'
 
 vim.lsp.enable 'vtsls'
 
+vim.lsp.enable 'rust_analyzer'
+
 local function docker_fix()
   local filename = vim.fn.expand '%:t'
 

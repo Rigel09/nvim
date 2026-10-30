@@ -75,6 +75,7 @@ mason_tool_installer.setup {
     'mypy', --python
 
     'codelldb', --rust
+    'bacon', --rust
 
     'yamlfmt', -- yaml
     'yamlfix', -- yaml

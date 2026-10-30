@@ -20,6 +20,11 @@ vim.pack.add {
   { src = 'https://github.com/saghen/blink.cmp', version = 'v1' },
   'https://github.com/L3MON4D3/LuaSnip',
   'https://github.com/rafamadriz/friendly-snippets',
+  'https://github.com/saecki/crates.nvim',
+  {
+    src = 'https://github.com/mrcjkb/rustaceanvim',
+    version = vim.version.range '^9',
+  },
 }
 
 require('Comment').setup()
@@ -35,6 +40,19 @@ require('neogen').setup()
 require('f-string-toggle').setup {
   key_binding = '<leader>sf',
   key_binding_desc = 'Toggle f-string',
+}
+require('crates').setup {
+  completion = {
+    crates = {
+      enabled = true,
+    },
+  },
+  lsp = {
+    enabled = true,
+    actions = true,
+    completion = true,
+    hover = true,
+  },
 }
 require('treesitter-context').setup { mode = 'cursor', max_lines = 5 }
 require('nvim-treesitter').setup()
